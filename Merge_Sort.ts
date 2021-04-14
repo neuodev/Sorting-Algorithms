@@ -1,3 +1,13 @@
+console.log(mergeSort([4, 2, 1, 7, 3 - 938503]));
+function mergeSort(array: number[]) {
+  if (array.length <= 1) return array;
+  let middle = Math.floor(array.length / 2);
+  return merge(
+    mergeSort(array.slice(0, middle)),
+    mergeSort(array.slice(middle))
+  );
+}
+
 merge([2, 8], [1, 3, 4]);
 function merge(first: number[], second: number[]) {
   let p1 = 0;
@@ -14,5 +24,5 @@ function merge(first: number[], second: number[]) {
   }
   newArray = [...newArray, ...first.slice(p1), ...second.slice(p2)];
 
-  console.log(newArray);
+  return newArray;
 }
