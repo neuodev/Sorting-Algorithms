@@ -4,8 +4,7 @@ function insertionSort(array: number[]) {
   for (let i = 0; i <= array.length; i++) {
     sortSubArray(array, i);
   }
-
-  console.log(array);
+  return array;
 }
 
 function sortSubArray(array: number[], i: number) {
