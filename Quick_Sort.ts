@@ -1,16 +1,25 @@
-quickSort([15, 6, 3, 1, 22, 10, 13]);
+console.log(quickSort([15, 6, 3, 1, 22, 10, 13], 0, 6));
+function quickSort(array: number[], start: number, end: number) {
+  if (start >= end) return;
+  let boundary = partition(array, start, end);
+  quickSort(array, start, boundary - 1);
+  quickSort(array, boundary + 1, end);
 
-function quickSort(array: number[]) {
-  let pivot = array.length - 1;
-  let p = -1;
-  for (let i = 0; i < array.length; i++) {
+  return array;
+}
+
+function partition(array: number[], start: number, end: number) {
+  let pivot = end;
+  let boundary = start - 1;
+  for (let i = start; i <= end; i++) {
     const current = array[i];
     if (current <= array[pivot]) {
-      p++;
-      swap(i, p, array);
+      boundary++;
+      swap(i, boundary, array);
     }
   }
-  console.log(array);
+  // the idx of the pivot after been swaped
+  return boundary;
 }
 
 function swap(j: number, i: number, array: number[]) {
