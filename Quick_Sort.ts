@@ -13,10 +13,7 @@ function partition(array: number[], start: number, end: number) {
   let boundary = start - 1;
   for (let i = start; i <= end; i++) {
     const current = array[i];
-    if (current <= array[pivot]) {
-      boundary++;
-      swap(i, boundary, array);
-    }
+    if (current <= array[pivot]) swap(i, ++boundary, array);
   }
   // the idx of the pivot after been swaped
   return boundary;
