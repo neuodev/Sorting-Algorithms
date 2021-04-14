@@ -1,19 +1,19 @@
 insertionSort([9, 8, 7, 1, 4]);
 
 function insertionSort(array: number[]) {
-  for (let i = 0; i <= array.length; i++) {
+  for (let i = 1; i < array.length; i++) {
     sortSubArray(array, i);
   }
+  console.log(array);
   return array;
 }
 
 function sortSubArray(array: number[], i: number) {
-  let idx = i - 1;
-  while (idx >= 0) {
-    if (array[idx] < array[idx - 1]) {
-      swap(idx, idx - 1, array);
+  while (i >= 0) {
+    if (array[i] < array[i - 1]) {
+      swap(i, i - 1, array);
     }
-    idx--;
+    i--;
   }
 }
 
