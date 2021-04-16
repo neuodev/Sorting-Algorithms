@@ -28,4 +28,4 @@ function swap(j: number, i: number, array: number[]) {
   [array[j], array[i]] = [array[i], array[j]];
 }
 
-partition([1, 2, 5, 6, 4, 2], 0, 5);
+
